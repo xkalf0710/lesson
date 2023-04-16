@@ -16,6 +16,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         centerTitle: true,
       ),
+      body: Text('Login'),
     );
   }
 }
