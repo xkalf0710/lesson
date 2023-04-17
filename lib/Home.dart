@@ -9,54 +9,74 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  TextEditingController textarea = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    final widthScreen = MediaQuery.of(context);
+
     return Scaffold(
+      backgroundColor: Color.fromRGBO(243, 245, 248, 1),
       appBar: AppBar(
-        elevation: 0,
-        toolbarHeight: 66,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(16),
-            bottomRight: Radius.circular(16),
-          )
-        ),
-        flexibleSpace: Container(
-          height: 66,
-          margin: const EdgeInsets.only(top: 28),
-          padding: const EdgeInsets.only(right: 16, left: 16),
-          decoration:  const BoxDecoration(
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  InkWell(
-                    onTap: (){},
-                    child: Text("Монгол бичиг", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),),
-                  ),
-                  SizedBox(width: 10,),
-                  InkWell(
-                    onTap: (){},
-                    child: Icon(
-                      Icons.notifications_active_outlined,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
-              ),
-            ],
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        title: Text("Монгол бичиг", style: TextStyle(
+          fontFamily: "Ubuntu",
+          fontSize: 21,
+          fontWeight: FontWeight.w600,color: Colors.black
+        ),),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios_rounded, color: Colors.blue,
           ),
         ),
+        elevation: 0.0,
+
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            child: Text("hkasdfhsf"),
-          ),
+      body: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            TextField(
+              controller: textarea,
+              keyboardType: TextInputType.multiline,
+              maxLines: 4,
+              decoration: InputDecoration(
+                hintText: '',
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 1, color: Colors.black
+                  )
+                ),
+              ),
+            ),
+            SizedBox(height: 11,),
+            ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              onSurface: Colors.white,
+              elevation: 0.0,
+              padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
+              primary: Colors.white,
+              shadowColor: Colors.white
+            ),
+            onPressed: (){
+              //horwvvleh
+            },
+             child: Text('Хөрвүүлэх', style: TextStyle(
+               fontWeight: FontWeight.w600,
+               fontFamily: "Ubuntu",
+               fontSize: 15,
+               fontStyle: FontStyle.normal,
+               color: Colors.black
+             ),),
+            ),
+          ],
         ),
       ),
     );
