@@ -11,7 +11,7 @@ import 'package:lesson/services/navigator_service.dart';
 import 'package:lesson/services/setup.dart';
 
 class HttpRequest{
-  static const host = "";
+  static const host = "http://localhost:3000/";
   static const uri = host;
 
   Dio dio = Dio();

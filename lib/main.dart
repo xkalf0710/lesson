@@ -29,6 +29,7 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         title: 'Монгол бичиг',
         theme: ligthTheme,
+        debugShowCheckedModeBanner: false,
         navigatorKey: locator<NavigatorService>().navigatorKey,
         initialRoute: "/",
         home: const Login(),
